@@ -289,6 +289,7 @@ jobs:
           CREATE_LOG_FILE: true
           REMOVE_ANSI_COLOR_CODES_FROM_OUTPUT: true
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_GIT_COMMITLINT: ${{ github.event_name != 'push' || github.ref != 'refs/heads/main' }}
           # Disable dependency security audits because we have dedicated jobs for those,
           # and we don't want to fail the whole linting job because vulnerabilities
           # might not necessarily be fixable until patches are out.
@@ -311,6 +312,7 @@ jobs:
         env:
           REMOVE_ANSI_COLOR_CODES_FROM_OUTPUT: true
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_GIT_COMMITLINT: ${{ github.event_name != 'push' || github.ref != 'refs/heads/main' }}
           # Disable dependency security audits because we have dedicated jobs for those,
           # and we don't want to fail the whole linting job because vulnerabilities
           # might not necessarily be fixable until patches are out.
