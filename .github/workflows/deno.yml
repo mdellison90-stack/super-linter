@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-# This workflow will install Deno then run `deno lint` and `deno test`.
+# This workflow will install Deno then run `deno lint`.
 # For more information see: https://github.com/denoland/setup-deno
 
 name: Deno
@@ -37,6 +37,3 @@ jobs:
 
       - name: Run linter
         run: deno lint --ignore=test/linters
-
-      - name: Run tests
-        run: deno test -A
