@@ -39,4 +39,5 @@ jobs:
         run: deno lint --ignore=test/linters
 
       - name: Run tests
+        if: ${{ hashFiles('**/*_test.{ts,tsx,js,jsx,mts,mjs}', '**/*.test.{ts,tsx,js,jsx,mts,mjs}') != '' }}
         run: deno test -A
